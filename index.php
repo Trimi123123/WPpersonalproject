@@ -7,29 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<header>
-    <div class="container">
-        <h1><?php bloginfo('name'); ?></h1>
-
-        <nav class="main-nav">
-            <?php
-            wp_nav_menu([
-                'theme_location' => 'main-menu',
-                'container' => false,
-                'menu_class' => 'menu',
-            ]);
-            ?>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h2>Welcome to MeroCode</h2>
-        <p>Building clean, fast, and modern WordPress themes.</p>
-    </div>
-</section>
+<?php get_header(); ?>
 
 <main class="content">
     <div class="container posts-wrapper">
@@ -50,12 +28,5 @@
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <p>© <?php echo date('Y'); ?> MeroCode. All rights reserved.</p>
-    </div>
-</footer>
+<?php get_footer(); ?>
 
-<?php wp_footer(); ?>
-</body>
-</html>

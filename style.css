@@ -82,8 +82,8 @@ footer {
 }
 
 .post {
-    background: #ffffff;           /* White background */
-    border-left: 6px solid #3b82f6; /* Blue accent border */
+    background: #ffffff;
+    border-left: 6px solid #3b82f6;
     padding: 25px 30px;
     margin-bottom: 25px;
     border-radius: 12px;
@@ -107,21 +107,21 @@ footer {
     color: #475569;
     line-height: 1.7;
 }
+
 .posts-wrapper {
     display: flex;
-    justify-content: space-between; /* one left, one right */
+    justify-content: space-between;
     gap: 20px;
 }
 
 .post-1 {
-    flex: 0 0 48%; /* left post width */
+    flex: 0 0 48%;
 }
 
 .post-2 {
-    flex: 0 0 48%; /* right post width */
+    flex: 0 0 48%;
 }
 
-/* Optional: make responsive for small screens */
 @media (max-width: 768px) {
     .posts-wrapper {
         flex-direction: column;
@@ -133,14 +133,16 @@ footer {
 
 .main-nav .menu {
     display: flex;
-    justify-content: flex-end; /* pushes menu items to the right */
+    flex-direction: row; 
+    justify-content: flex-end;
+    align-items: center; 
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .main-nav .menu li {
-    margin-left: 20px; /* space between items */
+    margin-left: 20px; 
 }
 
 .main-nav .menu li a {
@@ -152,5 +154,3 @@ footer {
 .main-nav .menu li a:hover {
     color: white;
 }
-
-
