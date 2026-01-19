@@ -17,12 +17,12 @@
     }
     .main-nav .menu li a {
       text-decoration: none;
-      color: #333;
+      color: #ffffffff;
       padding: 10px;
       display: block;
     }
     .main-nav .menu li a:hover {
-      background-color: #f0f0f081;
+      background-color: #000000ff;
     }
     /* Optional: Make header look better */
     header {

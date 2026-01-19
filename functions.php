@@ -1,25 +1,39 @@
 <?php
-// Enqueue theme assets
-function protheme_assets() {
-  wp_enqueue_style('protheme-style', get_stylesheet_uri());
-  wp_enqueue_script('protheme-js', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.0', true);
+function ds_style() {
+  wp_enqueue_style('digitalschool-style', get_stylesheet_uri());
 }
-add_action('wp_enqueue_scripts', 'protheme_assets');
+add_action('wp_enqueue_scripts', 'ds_style');
 
-// Theme setup
-function protheme_setup() {
-    // Add theme supports
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('html5', ['search-form', 'gallery']);
-    add_theme_support('custom-logo');
 
-    // Register menus
-    register_nav_menus([
-        'main-menu' => 'Main Menu',
-    ]);
-
-    // Disable admin bar on frontend
-    show_admin_bar(false);
+function digitalschool_setup() {
+    register_nav_menus( array(
+        'primary' => 'Primary Menu',
+    ) );
 }
-add_action('after_setup_theme', 'protheme_setup');
+add_action( 'after_setup_theme', 'digitalschool_setup' );
+
+function ds_js(){
+  wp_enqueue_script('ds-js',get_theme_file_uri('js/main.js'), array(), 1.0, true);
+}
+add_action ('wp_enqueue_scripts', 'ds_js');
+
+
+add_action('wp_enqueue_scripts', function () {
+
+  // Only on pages using aboutus.php
+  if ( is_page_template('aboutus.php') ) {
+    wp_enqueue_script(
+      'tailwind-play',
+      'https://cdn.tailwindcss.com'
+    );
+  }
+});
+
+
+add_action('after_setup_theme', function () {
+  add_theme_support('post-thumbnails');
+  add_image_size('team_avatar', 500, 500);
+});
+
+
+?>
